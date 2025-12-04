@@ -7,7 +7,11 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Geist", ...defaultTheme.fontFamily.sans],
+        sans: [
+          "Geist",
+          "'LXGW WenKai Screen R'",
+          ...defaultTheme.fontFamily.sans,
+        ],
         mono: ["'Geist Mono'", ...defaultTheme.fontFamily.mono],
       },
     },

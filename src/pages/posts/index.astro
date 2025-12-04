@@ -8,23 +8,48 @@ const collection = await getCollection("posts");
 const posts = collection.sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
+
+// 按年份分组
+const groupedByYear = posts.reduce(
+  (acc, post) => {
+    const year = post.data.date.getFullYear();
+    if (!acc[year]) acc[year] = [];
+    acc[year].push(post);
+    return acc;
+  },
+  {} as Record<number, typeof posts>
+);
+
+// 按年份降序排序
+const sortedYears = Object.keys(groupedByYear)
+  .map(Number)
+  .sort((a, b) => b - a);
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main>
-    <ul class="flex flex-col gap-1.5">
+    <ul class="flex flex-col gap-6">
       {
-        posts.map((post) => (
+        sortedYears.map((year) => (
           <li>
-            <a
-              href={`/posts/${post.slug}`}
-              class="group flex justify-between gap-3"
-            >
-              <span class="group-hover:underline">{post.data.title}</span>
-              <span class="text-nowrap text-zinc-500">
-                {formatDate(post.data.date)}
-              </span>
-            </a>
+            <h2 class="year-blur-glow mb-4 text-2xl font-bold">{year}</h2>
+            <ul class="flex flex-col gap-1.5">
+              {groupedByYear[year].map((post) => (
+                <li>
+                  <a
+                    href={`/posts/${post.slug}`}
+                    class="group flex items-center justify-between gap-4"
+                  >
+                    <span class="flex-1 transition-colors duration-200 group-hover:text-orange-600 group-hover:underline dark:group-hover:text-blue-400">
+                      {post.data.title}
+                    </span>
+                    <span class="w-24 flex-shrink-0 text-right font-mono text-zinc-500 transition-colors duration-200 group-hover:text-orange-600 dark:group-hover:text-blue-400">
+                      {formatDate(post.data.date)}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </li>
         ))
       }
