@@ -1,0 +1,11 @@
+{
+	"id": "yearly-diary-comparator",
+	"name": "Yearly Diary Comparator",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Show a side-by-side yearly comparison of diary in daily notes",
+	"author": "kiitosu",
+	"authorUrl": "",
+	"fundingUrl": "",
+	"isDesktopOnly": false
+}

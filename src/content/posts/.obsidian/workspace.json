@@ -1,0 +1,246 @@
+{
+  "main": {
+    "id": "a02852b57c2ad2e1",
+    "type": "split",
+    "children": [
+      {
+        "id": "4082583af6acc38f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7a9f78e9d34d40b6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Resource/BunkrDownloader.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "BunkrDownloader"
+            }
+          },
+          {
+            "id": "7ba65c0c637207e8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "LANraragi.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "LANraragi"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0dfe142f7665364c",
+    "type": "split",
+    "children": [
+      {
+        "id": "7a10305b31d79151",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6ade5b336f8fdcd8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byModifiedTime",
+                "autoReveal": true
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "4c59f4dca9c10e9d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "315cfcf92c8c30ad",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "284f4b4bd7411327",
+    "type": "split",
+    "children": [
+      {
+        "id": "53a0fbfb42a19f7c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d0dfc9e46f1362f5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Assets/Pasted image 20250126155209.png",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Pasted image 20250126155209"
+            }
+          },
+          {
+            "id": "a185132b39d81fd0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Assets/Pasted image 20250126155209.png",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Pasted image 20250126155209"
+            }
+          },
+          {
+            "id": "edc2238f38d0dd48",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "8ee47cf840e91dff",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Auto Learning/Daily Task Check.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Daily Task Check"
+            }
+          },
+          {
+            "id": "d899970317876547",
+            "type": "leaf",
+            "state": {
+              "type": "yearly-diary-compare-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Yearly diary comparator"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:创建新数据库": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "obsidian-git:Open Git source control": false,
+      "yearly-diary-comparator:Open yearly comparator": false
+    }
+  },
+  "active": "7ba65c0c637207e8",
+  "lastOpenFiles": [
+    "Hentai@Home on VPS.md",
+    "LANraragi.md",
+    "三麻极意.md",
+    "Fun Project/LANraragi.md",
+    "Schedule/To-do.md",
+    "Game/三麻极意.md",
+    "Schedule/School Stuff.md",
+    "Fun Project/Hentai@Home on VPS.md",
+    "conflict-files-obsidian-git.md",
+    "Game/BrownDust2.md",
+    "Blog/Blog装修日志.md",
+    "Game/未命名.md",
+    "Blog",
+    "Fun Project/RasberryPi.md",
+    "Resource/EroManga/画师.md",
+    "Resource/EroManga/Magazine.md",
+    "Resource/XP Statistics.md",
+    "未命名.base",
+    "Guide/Guide.md",
+    "YSYX/HDLBits.md",
+    "YSYX/如何提问.md",
+    "YSYX/FPGA.md",
+    "YSYX/Linux Learning.md",
+    "YSYX/Learning Log.md",
+    "Fun Project/assets/Pasted image 20251210203304.png",
+    "Career/Verimake Video Summary.md",
+    "Competition/集创赛.md",
+    "Diary/2025-10-19.md",
+    "Life.md",
+    "Fun Project/assets/Pasted image 20251202183933.png",
+    "Fun Project/assets/Pasted image 20251201231609.png",
+    "Fun Project/assets/Pasted image 20251201192215.png",
+    "Fun Project/assets/Pasted image 20251201191713.png",
+    "Fun Project/assets/Pasted image 20251130041909.png",
+    "Fun Project/assets/Pasted image 20251130041541.png",
+    "Fun Project/assets/Pasted image 20251129220726.png",
+    "Fun Project/assets/Pasted image 20251129220040.png",
+    "Fun Project/assets/Pasted image 20251120121008.png",
+    "Resource/EroManga",
+    "Template",
+    "Habit",
+    "新建 文本文档.gitignore",
+    "新建 文本文档.txt",
+    "未命名.canvas",
+    "Diary",
+    "Excalidraw",
+    "未命名 1.base",
+    "Untitled.canvas"
+  ]
+}
