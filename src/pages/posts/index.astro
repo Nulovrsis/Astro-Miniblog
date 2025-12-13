@@ -32,7 +32,7 @@ const sortedYears = Object.keys(groupedByYear)
       {
         sortedYears.map((year) => (
           <li>
-            <h2 class="year-blur-glow mb-4 text-2xl font-bold">{year}</h2>
+            <h2 class="year-blur-glow mb-4 !px-0 text-3xl font-bold">{year}</h2>
             <ul class="flex flex-col gap-1.5">
               {groupedByYear[year].map((post) => (
                 <li>
@@ -40,7 +40,7 @@ const sortedYears = Object.keys(groupedByYear)
                     href={`/posts/${post.slug}`}
                     class="group flex items-center justify-between gap-4"
                   >
-                    <span class="flex-1 transition-colors duration-200 group-hover:text-orange-600 group-hover:underline dark:group-hover:text-blue-400">
+                    <span class="flex-1 text-xl transition-colors duration-200 group-hover:text-orange-600 group-hover:underline dark:group-hover:text-blue-400">
                       {post.data.title}
                     </span>
                     <span class="w-24 flex-shrink-0 text-right font-mono text-zinc-500 transition-colors duration-200 group-hover:text-orange-600 dark:group-hover:text-blue-400">

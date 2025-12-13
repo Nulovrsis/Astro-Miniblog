@@ -28,6 +28,13 @@ const { Content } = await post.render();
     <p class="mb-1 font-medium text-zinc-500">
       {formatDate(post.data.date)}
     </p>
+    {
+      post.data.description && (
+        <blockquote class="my-6 border-l-4 border-zinc-300 pl-4 italic text-zinc-600 dark:border-zinc-600 dark:text-zinc-400">
+          {post.data.description}
+        </blockquote>
+      )
+    }
     <article>
       <Content />
     </article>

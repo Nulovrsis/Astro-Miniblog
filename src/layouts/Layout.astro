@@ -27,7 +27,7 @@ const {
     <!-- Global Metadata -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/jpg" href="/favicon.jpg" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Font preloads -->
@@ -111,4 +111,21 @@ const {
 
   // 在页面切换后重新应用主题，确保主题保持一致
   document.addEventListener("astro:after-swap", setTheme);
+</script>
+
+<script>
+  import mediumZoom from "medium-zoom";
+
+  const initZoom = () => {
+    mediumZoom("article img", {
+      margin: 24,
+      background: "rgba(0,0,0,0.8)",
+    });
+  };
+
+  // 初始化
+  initZoom();
+
+  // 适配 View Transitions
+  document.addEventListener("astro:after-swap", initZoom);
 </script>
