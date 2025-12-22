@@ -1,10 +1,10 @@
 ---
 title: LANraragi部署记录
-description: LANraragi -- Open source server for archival of comics/manga, running on Mojolicious + Redis.可以用来存档漫画，并实现元数据自动刮削。
+description: 暑假想着建一个能够刮削元数据的漫画库，踩了不少坑，记录一下搭建过程以及碰到的问题。
 date: 2025-08-23
 ---
 
-<div class="masked my-6">本子</div>
+![LANraragi 主界面](assets/Pasted%20image%2020251218220104.png)
 
 # 通过LANraragi实现Exhentai备份（元数据刮削）
 
@@ -24,7 +24,7 @@ date: 2025-08-23
 
 通过在插件设置中开启允许替换标题与关闭Comicinfo 可以实现虽然Ehviewer下载的标题是以GID命名并且会有英文tag的问题 效果为自动保存标题与中文Tag
 
-![image-20250724145011920](assets/image-20250724145011920.png)
+![插件设置界面](assets/image-20250724145011920.png)
 
 - [x] 测试Ehviewer已完成后的任务继续进程后会发生什么
 
@@ -60,7 +60,7 @@ date: 2025-08-23
   通过网站和Nhentai downloader插件,也可以下载含有Comicinfo.xml的.zip文件,区别是xml文件包含在压缩包中,导入lanraragi content文件夹自动触发ComicInfo插件,同样也会利用tag rule翻译。
   > 原本Nhentai的tag rule是不包含如"female : ..."这一项的所以我对EtagCN的tag rule(tags-20230428.txt)利用正则表达式去除了该部分,可以完美适应Nhentai的tag翻译工作。
 
-![](assets/Pasted%20image%2020251120121008.png)
+![Tag rule 配置示例](assets/Pasted%20image%2020251120121008.png)
 
 ```powershell
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/catppuccin_frappe.omp.json" | Invoke-Expression
@@ -84,9 +84,9 @@ function lanraragi {
 
 注意：
 需要先下载libvips并设置环境变量（注意重启终端）才能启动libvips代替IM生成缩略图
-![](assets/Pasted%20image%2020251030213819.png)
+![libvips 环境变量配置 1](assets/Pasted%20image%2020251030213819.png)
 
-![](assets/Pasted%20image%2020251030213741.png)
+![libvips 环境变量配置 2](assets/Pasted%20image%2020251030213741.png)
 
 ## Ehviewer 中开启的ComicInfo功能 生成的xml文件中没有Title这一项
 

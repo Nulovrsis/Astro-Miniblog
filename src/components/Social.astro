@@ -39,24 +39,31 @@ const config = platformConfig[platform.toLowerCase()] || platformConfig.github;
   config.isImage ? (
     <a
       href={config.url}
-      title={config.label}
+      aria-label={config.label}
       class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-200 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:hover:bg-zinc-700"
     >
-      <div class="flex h-6 w-6 items-center justify-center rounded-full bg-white dark:bg-zinc-700">
-        <img
-          src={config.icon}
-          alt={config.label}
-          class="h-5 w-5 object-contain grayscale"
-          loading="lazy"
-        />
-      </div>
+      <img
+        src={config.icon}
+        alt={config.label}
+        class="h-5 w-5 object-contain grayscale"
+      />
     </a>
   ) : (
     <a
       href={config.url}
-      title={config.label}
+      aria-label={config.label}
       class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-200 text-zinc-700 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
-      set:html={config.icon}
-    />
+    >
+      <svg
+        class="h-5 w-5"
+        fill="currentColor"
+        role="img"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title>{config.label}</title>
+        <Fragment set:html={config.icon} />
+      </svg>
+    </a>
   )
 }

@@ -57,7 +57,7 @@
     }
 
     img {
-      @apply my-4 rounded-lg border dark:border-zinc-700 mx-auto block;
+      @apply my-4 rounded-lg mx-auto block;
     }
 
     video {
