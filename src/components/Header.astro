@@ -15,6 +15,31 @@ import ThemeToggle from "./ThemeToggle.astro";
 
 <style>
   a {
-    @apply text-lg font-medium text-zinc-500 hover:text-zinc-900 hover:underline dark:hover:text-zinc-100;
+    @apply text-lg font-medium text-zinc-500 transition-all duration-300 dark:text-zinc-400;
+    position: relative;
+  }
+
+  a:hover {
+    @apply text-zinc-900 dark:text-zinc-100;
+    text-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+  }
+
+  a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      rgba(34, 197, 94, 0.6),
+      rgba(59, 130, 246, 0.6)
+    );
+    transition: width 0.3s ease;
+  }
+
+  a:hover::after {
+    width: 100%;
   }
 </style>

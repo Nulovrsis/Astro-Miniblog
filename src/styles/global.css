@@ -103,7 +103,7 @@
     }
 
     mark {
-      @apply dark:bg-yellow-500/50 dark:text-white;
+      @apply dark:bg-yellow-500/50 dark:text-white transition-colors duration-300;
     }
   }
 }
@@ -114,6 +114,7 @@
   display: inline-block;
   padding: 0.25em 0.75em;
   background: transparent;
+  animation: slideIn 0.6s ease-out;
 }
 
 .year-blur-glow::before {
@@ -138,6 +139,18 @@
   filter: blur(8px);
   pointer-events: none;
   z-index: -1;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes ellipseGlow {
