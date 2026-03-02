@@ -68,6 +68,12 @@ const {
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
+    <!-- Umami Analytics -->
+    <script
+      defer
+      src="http://84.54.3.243:3002/script.js"
+      data-website-id="8483d5d7-2810-416a-b1bf-cc0e63a92ca7"></script>
+
     <ViewTransitions />
   </head>
   <body
@@ -128,4 +134,13 @@ const {
 
   // 适配 View Transitions
   document.addEventListener("astro:after-swap", initZoom);
+</script>
+<script is:inline>
+  // Umami 适配 View Transitions
+  // 监听页面切换事件，确保每个页面访问都被正确记录
+  document.addEventListener("astro:page-load", () => {
+    if (typeof window.umami !== "undefined") {
+      window.umami.track();
+    }
+  });
 </script>
