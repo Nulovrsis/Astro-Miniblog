@@ -64,6 +64,12 @@
 
     img {
       @apply my-4 rounded-lg mx-auto block;
+      cursor: pointer !important;
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
     }
 
     video {
@@ -168,4 +174,20 @@
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0.8;
   }
+}
+
+/* 模糊文本效果 */
+.blur-text {
+  transition: filter 0.3s ease;
+  filter: blur(8px);
+  cursor: pointer;
+  user-select: none;
+}
+
+.blur-text.revealed {
+  filter: none;
+}
+
+.blur-text:hover {
+  opacity: 0.8;
 }

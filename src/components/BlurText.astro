@@ -1,0 +1,37 @@
+---
+export interface Props {
+  blur?: string;
+}
+
+const { blur = "blur(8px)" } = Astro.props;
+---
+
+<span class="blur-text" data-blur={blur}>
+  <slot />
+</span>
+
+<style define:vars={{ blur }}>
+  .blur-text {
+    transition: filter 0.3s ease;
+    filter: var(--blur);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .blur-text.revealed {
+    filter: none;
+  }
+
+  .blur-text:hover {
+    opacity: 0.8;
+  }
+</style>
+
+<script>
+  document.querySelectorAll(".blur-text").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+      el.classList.toggle("revealed");
+    });
+  });
+</script>

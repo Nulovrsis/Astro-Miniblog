@@ -36,5 +36,6 @@
     "editor:configure-toolbar"
   ],
   "tabSize": 6,
-  "newFileLocation": "current"
+  "newFileLocation": "current",
+  "alwaysUpdateLinks": true
 }

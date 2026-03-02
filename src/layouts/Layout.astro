@@ -20,6 +20,18 @@ const {
   image = "/static/blog-placeholder.png",
   className,
 } = Astro.props;
+
+// 构造 OG 图像 URL
+const getImageUrl = (img: string) => {
+  try {
+    return new URL(img, Astro.url).toString();
+  } catch {
+    // 如果 Astro.url 无效，直接返回图像路径
+    return img;
+  }
+};
+
+const ogImageUrl = getImageUrl(image);
 ---
 
 <html lang="en">
@@ -59,14 +71,14 @@ const {
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:image" content={ogImageUrl} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+    <meta property="twitter:image" content={ogImageUrl} />
 
     <!-- Umami Analytics -->
     <script
@@ -123,7 +135,7 @@ const {
   import mediumZoom from "medium-zoom";
 
   const initZoom = () => {
-    mediumZoom("article img", {
+    mediumZoom("article img:not(.no-zoom)", {
       margin: 24,
       background: "rgba(0,0,0,0.8)",
     });
@@ -134,6 +146,19 @@ const {
 
   // 适配 View Transitions
   document.addEventListener("astro:after-swap", initZoom);
+</script>
+<script is:inline>
+  // 模糊文本点击交互
+  function initBlurText() {
+    document.querySelectorAll(".blur-text").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.stopPropagation();
+        el.classList.toggle("revealed");
+      });
+    });
+  }
+  initBlurText();
+  document.addEventListener("astro:after-swap", initBlurText);
 </script>
 <script is:inline>
   // Umami 适配 View Transitions
