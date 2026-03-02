@@ -45,9 +45,7 @@ date: 2026-03-02
 
 下载主要在移动端进行,因为平时用移动设备刷本比较方便<span class="blur-text">其实是在宿舍不方便用PC看</span>。个人推荐彩E:
 <a href="https://github.com/FooIbar/EhViewer"><img src="https://githubcard.com/FooIbar/EhViewer.svg" alt="GitHub Repo Card" class="no-zoom" style="margin: 1rem auto; display: block; border-radius: 0.5rem;"></a>
-下载本子,注意用爬虫的话尽量日常轻量下载,使用时尽量将并发下载数设置低一些,同时设置好合适的下载延时,不然如果是未捐赠用户或者没跑过H@H解锁过Hath Perks的账户使用的跟随IP的5k点[`Image Limits`](https://github.com/ccloli/E-Hentai-Downloader/issues/298)则会一下就消耗完,导致IP被Ban,[关于此事的讨论见Issue](https://github.com/seven332/EhViewer/issues/350),如果是想要备份收藏夹建议使用GP归档下载或者使用种子下载,有能力有闲置服务器的也可以跑一跑[H@H](https://e-hentai.org/hentaiathome.php),帮助E站减轻服务器压力。
-![H@H](assets/H@H.png)
-同时在设置中打开"保存为CBZ压缩包"和"压缩包元数据"功能(便于后面`ComicInfo`插件直接离线提取元数据)。
+下载本子,注意用爬虫的话尽量日常轻量下载,使用时尽量将并发下载数设置低一些,同时设置好合适的下载延时,不然如果是未捐赠用户或者没跑过H@H解锁过Hath Perks的账户使用的跟随IP的5k点[`Image Limits`](https://github.com/ccloli/E-Hentai-Downloader/issues/298)则会一下就消耗完,导致IP被Ban,[关于此事的讨论见Issue](https://github.com/seven332/EhViewer/issues/350),如果是想要备份收藏夹建议使用GP归档下载或者使用种子下载,同时在设置中打开"保存为CBZ压缩包"和"压缩包元数据"功能(便于后面`ComicInfo`插件直接离线提取元数据)。
 ![Ehviewer](assets/Ehviewer.jpg)
 
 而元数据刮削主要是通过插件完成:`ComicInfo`(推荐)插件和`E-Hentai`插件:
@@ -173,5 +171,8 @@ lanraragi插件使用方法:
     - 分辨率建议选择自动或者 1280x，在移动设备上足够清晰且配额消耗较少
     - 在通用设置中关闭"阅读时自动缓存"
     - 对于页数多的图库，建议先用 Safari 归档下载，然后导入到对应图库中
+## H@H
+E站的一种pcdn项目，有能力有闲置服务器的也可以跑一跑[H@H](https://e-hentai.org/hentaiathome.php),帮助E站减轻服务器压力。
+![H@H](assets/H@H.png)
 
 **目前博客还在装修，还没弄评论系统，有疑问直接邮箱pm我即可。**
