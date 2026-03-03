@@ -36,7 +36,7 @@
 @layer components {
   article {
     p {
-      @apply my-4 leading-relaxed text-lg tracking-wider;
+      @apply my-4 leading-loose text-lg tracking-wider;
     }
 
     h1 {

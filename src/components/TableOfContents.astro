@@ -1,0 +1,133 @@
+---
+import type { MarkdownHeading } from "astro";
+
+type Props = {
+  headings: MarkdownHeading[];
+};
+
+type HeadingWithSubheadings = MarkdownHeading & {
+  subheadings: MarkdownHeading[];
+};
+
+const { headings } = Astro.props;
+
+const grouppedHeadings = headings.reduce((array, heading) => {
+  if (heading.depth === 2) {
+    array.push({ ...heading, subheadings: [] });
+  } else if (heading.depth === 3) {
+    array.at(-1)?.subheadings.push(heading);
+  }
+
+  return array;
+}, [] as HeadingWithSubheadings[]);
+---
+
+<nav
+  id="table-of-contents"
+  aria-label="Table Of Contents"
+  class="mb-8 rounded-xl border border-zinc-200/80 bg-zinc-50/80 p-5 backdrop-blur-sm dark:border-zinc-700/80 dark:bg-zinc-900/60"
+>
+  <details open class="toc-details group">
+    <summary
+      class="flex cursor-pointer list-none items-center justify-between text-sm font-semibold tracking-wide text-zinc-900 marker:hidden dark:text-zinc-100"
+    >
+      目录
+      <span
+        class="toc-chevron text-zinc-500 transition-transform duration-200 dark:text-zinc-400"
+        aria-hidden="true">⌄</span
+      >
+    </summary>
+    <ol class="mt-3 space-y-1.5 text-sm">
+      {
+        grouppedHeadings.map((h) => (
+          <li>
+            <a
+              href={`#${h.slug}`}
+              class="toc-link block rounded-md px-2 py-1.5 text-zinc-700 transition-colors hover:bg-zinc-200/60 hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800/70 dark:hover:text-zinc-100"
+            >
+              {h.text}
+            </a>
+            {h.subheadings.length > 0 && (
+              <ol class="mt-1.5 space-y-1 border-l border-zinc-200 ps-3 dark:border-zinc-700">
+                {h.subheadings.map((sub) => (
+                  <li>
+                    <a
+                      href={`#${sub.slug}`}
+                      class="toc-link block rounded-md px-2 py-1 text-[0.82rem] text-zinc-600 transition-colors hover:bg-zinc-200/60 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800/70 dark:hover:text-zinc-100"
+                    >
+                      {sub.text}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            )}
+          </li>
+        ))
+      }
+    </ol>
+  </details>
+</nav>
+
+<script is:inline>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const headingFragment = `#${entry.target.id}`;
+        const tocItem = document.querySelector(`a[href="${headingFragment}"]`);
+
+        if (entry.isIntersecting) {
+          const previouslyActivatedItem =
+            document.querySelector(".active-toc-item");
+
+          previouslyActivatedItem?.classList.remove("active-toc-item");
+          tocItem?.classList.add("active-toc-item");
+        } else {
+          const isAnyOtherEntryIntersecting = entries.some(
+            (e) => e.target.id !== entry.target.id && e.isIntersecting,
+          );
+
+          if (isAnyOtherEntryIntersecting) {
+            tocItem?.classList.remove("active-toc-item");
+          }
+        }
+      }
+    },
+    { root: null, rootMargin: "0px", threshold: [1] },
+  );
+
+  const sectionHeadings = document.querySelectorAll(
+    "article > h2, article > h3",
+  );
+
+  for (const heading of sectionHeadings) {
+    observer.observe(heading);
+  }
+
+  // Smooth scroll
+  document
+    .querySelectorAll('#table-of-contents a[href^="#"]')
+    .forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        const href = this.getAttribute("href");
+        if (href?.startsWith("#")) {
+          e.preventDefault();
+          const targetElement = document.querySelector(href);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        }
+      });
+    });
+</script>
+
+<style>
+  .toc-details:not([open]) .toc-chevron {
+    transform: rotate(-90deg);
+  }
+
+  .active-toc-item {
+    @apply bg-zinc-200/70 font-medium text-zinc-900 dark:bg-zinc-800/80 dark:text-zinc-100;
+  }
+</style>

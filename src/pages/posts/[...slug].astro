@@ -1,5 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
+import Comments from "../../components/Comments";
+import TableOfContents from "../../components/TableOfContents.astro";
 import Layout from "../../layouts/Layout.astro";
 import { formatDate } from "../../lib/utils";
 
@@ -13,7 +15,7 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"posts">;
 
 const post = Astro.props;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
 ---
 
 <Layout
@@ -35,8 +37,12 @@ const { Content } = await post.render();
         </blockquote>
       )
     }
+    {headings.length > 0 && <TableOfContents headings={headings} />}
     <article>
       <Content />
     </article>
+    <div class="mt-8 border-t border-zinc-300 pt-8 dark:border-zinc-700">
+      <Comments client:load />
+    </div>
   </main>
 </Layout>
