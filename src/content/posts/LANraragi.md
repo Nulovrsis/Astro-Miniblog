@@ -68,7 +68,7 @@ docker rm lanraragi
 
 下载主要在移动端进行，因为平时用移动设备刷本比较方便<span class="blur-text">（其实是在宿舍不方便用PC看）</span>。个人推荐彩E:
 <a href="https://github.com/FooIbar/EhViewer"><img src="https://githubcard.com/FooIbar/EhViewer.svg" alt="GitHub Repo Card" class="no-zoom" style="margin: 1rem auto; display: block; border-radius: 0.5rem;" loading="lazy"></a>
-下载本子，注意`Ehviewer`中提供的下载属于爬虫，尽量日常轻量下载，使用时尽量将并发下载数设置低一些，同时设置好合适的下载延时，不然如果是未捐赠用户或者没解锁过Hath Perks中`More Pages`的账户，使用的跟随IP的5k点[`Image Limits`](https://github.com/ccloli/E-Hentai-Downloader/issues/298)则会一下就消耗完，导致IP被Ban，[关于此事的讨论见Issue](https://github.com/seven332/EhViewer/issues/350)，如果是想要备份收藏夹建议使用GP归档下载或者使用种子下载，同时在设置中打开"保存为CBZ压缩包"和"压缩包元数据"功能（便于后面`ComicInfo`插件直接离线提取元数据）。
+下载本子，注意`Ehviewer`中提供的下载属于爬虫，尽量日常轻量下载，使用时尽量将并发下载数设置低一些，同时设置好合适的下载延时，不然如果是未捐赠用户或者没解锁过Hath Perks中`More Pages`的账户，使用的跟随IP的5k点[`Image Limits`](https://github.com/ccloli/E-Hentai-Downloader/issues/298)则会一下就消耗完，导致IP被Ban，同时滥用爬虫下载也会增加服务器负担, [关于此事的讨论见Issue](https://github.com/seven332/EhViewer/issues/350)，如果是想要备份收藏夹建议使用GP归档下载或者使用种子下载，同时在设置中打开"保存为CBZ压缩包"和"压缩包元数据"功能（便于后面`ComicInfo`插件直接离线提取元数据）。
 ![Ehviewer](assets/Ehviewer.jpg)
 
 而元数据刮削主要是通过插件完成:`ComicInfo`(推荐)插件和`E-Hentai`插件:
