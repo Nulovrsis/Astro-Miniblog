@@ -40,18 +40,18 @@
     }
 
     h1 {
-      @apply mt-8 mb-4 pl-4 text-3xl font-medium dark:text-white tracking-wider border-l-4 border-blue-500 dark:border-blue-400;
+      @apply mt-12 mb-4 pl-4 text-3xl font-medium dark:text-white tracking-wider border-l-4 border-blue-500 dark:border-blue-400;
     }
 
     h2 {
-      @apply mt-8 mb-4 pl-4 text-2xl font-medium dark:text-white tracking-wider border-l-4 border-blue-500 dark:border-blue-400;
+      @apply mt-12 mb-4 pl-4 text-2xl font-medium dark:text-white tracking-wider border-l-4 border-blue-500 dark:border-blue-400;
     }
 
     h3,
     h4,
     h5,
     h6 {
-      @apply mt-8 mb-4 pl-4 font-medium dark:text-white text-xl tracking-wider border-l-4 border-blue-500 dark:border-blue-400;
+      @apply mt-12 mb-4 pl-4 font-medium dark:text-white text-xl tracking-wider border-l-4 border-blue-500 dark:border-blue-400;
     }
 
     :not(pre)>code {
