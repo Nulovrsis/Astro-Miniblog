@@ -120,10 +120,10 @@ function lanraragi {
 
 ### nHentai（可选）
 
-Nhentai（应对版权炮/同时便于对画师其他作品查漏补缺）
-通过[nhentai](https://nhentai.net/)和[nHentai Helper插件](https://github.com/Tsuk1ko/nhentai-helper)，也可以下载含有Comicinfo.xml的.zip文件,区别只是.xml文件包含在压缩包中，导入lanraragi `/content`文件夹自动触发ComicInfo插件,同样也会利用Tag Rules翻译。
+nHentai（应对版权炮/同时便于对画师其他作品查漏补缺）
+通过[nHentai](https://nhentai.net/)和[nHentai Helper插件](https://github.com/Tsuk1ko/nhentai-helper)，也可以下载含有Comicinfo.xml的.zip文件,区别只是.xml文件包含在压缩包中，导入lanraragi `/content`文件夹自动触发ComicInfo插件,同样也会利用Tag Rules翻译。
 
-> 原本Nhentai的tag rule是不包含如"female : ..."这一项的所以我对EtagCN的tag rule（tags-20230428.txt）利用正则表达式去除了该部分，可以完美适应Nhentai的tag翻译工作,由于在`事先准备（Tag Rules 翻译规则导入）`部分详述过用法，此处不再赘述。
+> 原本Nhentai的tag rule是不包含如"female : ..."这一项的所以我对EtagCN的tag rule（tags-20230428.txt）利用正则表达式去除了该部分，可以完美适应nHentai的tag翻译工作,由于在`事先准备（Tag Rules 翻译规则导入）`部分详述过用法，此处不再赘述。
 
 ### 命名统一（可选）
 
