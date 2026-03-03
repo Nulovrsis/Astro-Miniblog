@@ -1,0 +1,49 @@
+---
+
+---
+
+<button
+  id="scroll-to-top"
+  class="fixed bottom-8 right-8 z-40 hidden h-10 w-10 items-center justify-center rounded-full bg-blue-500 text-white shadow-lg transition-all duration-300 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500"
+  aria-label="回到顶部"
+  title="回到顶部"
+>
+  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M19 14l-7-7m0 0L5 14m7-7v12"></path>
+  </svg>
+</button>
+
+<script>
+  const scrollToTopBtn = document.getElementById("scroll-to-top");
+
+  if (scrollToTopBtn) {
+    // 监听滚动事件
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.remove("hidden");
+        scrollToTopBtn.classList.add("flex");
+      } else {
+        scrollToTopBtn.classList.add("hidden");
+        scrollToTopBtn.classList.remove("flex");
+      }
+    });
+
+    // 点击按钮滚动到顶部
+    scrollToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+
+    // 处理页面转换
+    document.addEventListener("astro:after-swap", () => {
+      scrollToTopBtn.classList.add("hidden");
+      scrollToTopBtn.classList.remove("flex");
+    });
+  }
+</script>
