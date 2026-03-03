@@ -39,6 +39,24 @@ date: 2026-03-02
 还有标签云功能也比较有意思：
 ![标签云](assets/标签云.jpg)
 
+## LANraragi for VPS（Linux）安装与配置
+建议使用`Docker`安装:
+```bash
+docker run --name=lanraragi -p 3000:3000 \
+--mount type=bind,source=[YOUR_CONTENT_DIRECTORY],target=/home/koyomi/lanraragi/content \
+--mount type=bind,source=[YOUR_DATABASE_DIRECTORY],target=/home/koyomi/lanraragi/database \
+--mount type=bind,source=[YOUR_THUMBNAIL_DIRECTORY],target=/home/koyomi/lanraragi/thumb
+difegue/lanraragi
+```
+ 
+LANraragi 容器加载完成后，通过 [http://localhost:3000](http://localhost:3000) 访问。 使用以下命令停止/启动/删除容器（删除容器不会删除指定的归档目录）：
+
+```bash
+docker stop lanraragi
+docker start lanraragi
+docker rm lanraragi
+```
+
 ## Exhentai备份流程（元数据刮削）
 
 ### 事先准备（Tag Rules 翻译规则导入）
