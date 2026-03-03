@@ -96,7 +96,7 @@ function lanraragi {
 ![batch](assets/batch.png)
 
 - PS:如果出现SSL报错或者各种网络问题也可以尝试修改此插件的源码,插件路径在`~\lanraragi\lib\LANraragi\Plugin\Metadata\EHentai.pm`,在里面添加针对`ua`代理的临时环境变量,其中的端口修改为自己的代理软件端口,我主要修改了一下两个部分，可以自行修改，也可以参考[我的仓库](https://github.com/Nulovrsis/LANraragi-Plugins-Tag-Rules)中的`.pm`文件,修改好自己的代理地址即可直接替换原版`.pm`插件使用。
-  ![code2](assets/code2.png)
+![code2](assets/code2.png)
 
 ![code1](assets/code1.png)
 
@@ -137,7 +137,7 @@ Nhentai（应对版权炮/同时便于对画师其他作品查漏补缺）
 
 > 因为平时几乎是在Exhentai下的资源均含有ComicInfo.xml文件，如果是补档资源(nhentai)，导入的过程中会因为没有`tag`而被容易被`batch option`识别，此时在`batch option`中使用Ehenatai插件批量刮削tag即可
 
-### 更快的缩略图生成(可选)
+### 更快的缩略图生成（可选）
 
 通过阅读[v0.9.60 的ChangeLog](https://github.com/Difegue/LANraragi/releases/tag/v.0.9.60)可以发现，此次更新提供了新的缩略图生成与显示方案，之前使用的是`Image Magick`，现在可以下载[libvips](https://www.libvips.org/)，并在系统中添加环境变量，LRR即可使用该工具生成缩略图。
 
