@@ -46,6 +46,7 @@ const config = platformConfig[platform.toLowerCase()] || platformConfig.github;
         src={config.icon}
         alt={config.label}
         class="h-5 w-5 object-contain grayscale"
+        loading="eager"
       />
     </a>
   ) : (

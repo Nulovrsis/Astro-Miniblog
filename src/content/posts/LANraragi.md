@@ -18,7 +18,7 @@ date: 2026-03-02
 
 虽然部署在服务器和NAS上能够拥有最佳体验，但部署在PC也作为备份管理也未尝不可，想了解更多通过下方Repo的链接卡片访问：
 
-<a href="https://github.com/Difegue/LANraragi"><img src="https://githubcard.com/Difegue/LANraragi.svg" alt="GitHub Repo Card" class="no-zoom" style="margin: 1rem auto; display: block; border-radius: 0.5rem;"></a>
+<a href="https://github.com/Difegue/LANraragi"><img src="https://githubcard.com/Difegue/LANraragi.svg" alt="GitHub Repo Card" class="no-zoom" style="margin: 1rem auto; display: block; border-radius: 0.5rem;" loading="lazy"></a>
 
 ## LANraragi for Windows
 
@@ -48,7 +48,7 @@ date: 2026-03-02
 ### 下载
 
 下载主要在移动端进行,因为平时用移动设备刷本比较方便<span class="blur-text">其实是在宿舍不方便用PC看</span>。个人推荐彩E:
-<a href="https://github.com/FooIbar/EhViewer"><img src="https://githubcard.com/FooIbar/EhViewer.svg" alt="GitHub Repo Card" class="no-zoom" style="margin: 1rem auto; display: block; border-radius: 0.5rem;"></a>
+<a href="https://github.com/FooIbar/EhViewer"><img src="https://githubcard.com/FooIbar/EhViewer.svg" alt="GitHub Repo Card" class="no-zoom" style="margin: 1rem auto; display: block; border-radius: 0.5rem;" loading="lazy"></a>
 下载本子,注意用爬虫的话尽量日常轻量下载,使用时尽量将并发下载数设置低一些,同时设置好合适的下载延时,不然如果是未捐赠用户或者没解锁过Hath Perks中`More Pages`的账户,使用的跟随IP的5k点[`Image Limits`](https://github.com/ccloli/E-Hentai-Downloader/issues/298)则会一下就消耗完,导致IP被Ban,[关于此事的讨论见Issue](https://github.com/seven332/EhViewer/issues/350),如果是想要备份收藏夹建议使用GP归档下载或者使用种子下载,同时在设置中打开"保存为CBZ压缩包"和"压缩包元数据"功能(便于后面`ComicInfo`插件直接离线提取元数据)。
 ![Ehviewer](assets/Ehviewer.jpg)
 
@@ -81,7 +81,7 @@ notepad $PROFILE
 
 在文件中输入并保存:
 
-```
+```powershell
 function lanraragi {
     $env:http_proxy = "http://127.0.0.1:10808"
     $env:https_proxy = "http://127.0.0.1:10808" //这里填自己的代理软件端口
@@ -95,11 +95,11 @@ function lanraragi {
 ![batch](assets/batch.png)
 
 - PS:如果出现SSL报错或者各种网络问题也可以尝试修改此插件的源码,插件路径在`~\lanraragi\lib\LANraragi\Plugin\Metadata\EHentai.pm`,在里面添加针对`ua`代理的临时环境变量,其中的端口修改为自己的代理软件端口,我主要修改了一下两个部分，可以自行修改，也可以参考[我的仓库](https://github.com/Nulovrsis/LANraragi-Plugins-Tag-Rules)中的`.pm`文件,修改好自己的代理地址即可直接替换原版`.pm`插件使用。
-![code2](assets/code2.png)
+  ![code2](assets/code2.png)
 
 ![code1](assets/code1.png)
 
-### nHentai（可选，查漏补缺用）
+### nHentai（可选）
 
 Nhentai(应对版权炮/同时便于对画师其他作品查漏补缺)
 通过[nhentai](https://nhentai.net/)和[nHentai Helper插件](https://github.com/Tsuk1ko/nhentai-helper),也可以下载含有Comicinfo.xml的.zip文件,区别只是.xml文件包含在压缩包中,导入lanraragi `/content`文件夹自动触发ComicInfo插件,同样也会利用Tag Rules翻译。
@@ -146,8 +146,8 @@ Ehviewer 中开启的ComicInfo功能 生成的.xml文件中没有Title这一项:
 ## 如何使用Mihon/Komikku中的LANraragi插件
 
 通过漫画阅读开源软件Mihon/Komikku中的LANraragi插件可以实现随时随地在移动端观看备份的漫画
-<a href="https://github.com/mihonapp/mihon"><img src="https://githubcard.com/mihonapp/mihon.svg" alt="GitHub Repo Card" class="no-zoom" style="margin: 1rem auto; display: block; border-radius: 0.5rem;"></a>
-<a href="https://github.com/komikku-app/komikku"><img src="https://githubcard.com/komikku-app/komikku.svg" alt="GitHub Repo Card" class="no-zoom" style="margin: 1rem auto; display: block; border-radius: 0.5rem;"></a>
+<a href="https://github.com/mihonapp/mihon"><img src="https://githubcard.com/mihonapp/mihon.svg" alt="GitHub Repo Card" class="no-zoom" style="margin: 1rem auto; display: block; border-radius: 0.5rem;" loading="lazy"></a>
+<a href="https://github.com/komikku-app/komikku"><img src="https://githubcard.com/komikku-app/komikku.svg" alt="GitHub Repo Card" class="no-zoom" style="margin: 1rem auto; display: block; border-radius: 0.5rem;" loading="lazy"></a>
 
 lanraragi插件使用方法:
 在`设置` -`浏览`- `插件仓库`中导入:https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json

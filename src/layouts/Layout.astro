@@ -145,6 +145,91 @@ const ogImageUrl = getImageUrl(image);
 </script>
 
 <script is:inline>
+  function getCodeLanguage(preElement) {
+    const languageFromData =
+      preElement.getAttribute("data-language") || preElement.dataset.language;
+    if (languageFromData) return languageFromData;
+
+    const codeElement = preElement.querySelector("code");
+    if (!codeElement) return "text";
+
+    const className = `${preElement.className || ""} ${codeElement.className || ""}`;
+    const languageMatch = className.match(
+      /(?:language-|lang-)([a-z0-9.+#-]+)/i,
+    );
+
+    if (!languageMatch) return "text";
+    return languageMatch[1].toLowerCase();
+  }
+
+  async function copyCodeText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return;
+    }
+
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.position = "fixed";
+    textArea.style.opacity = "0";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    document.execCommand("copy");
+    textArea.remove();
+  }
+
+  function initCodeBlocks() {
+    document.querySelectorAll("article pre:has(code)").forEach((preElement) => {
+      if (preElement.classList.contains("enhanced-code")) return;
+      preElement.classList.add("enhanced-code");
+
+      const codeElement = preElement.querySelector("code");
+      if (!codeElement) return;
+
+      const languageTag = document.createElement("span");
+      languageTag.className = "code-lang";
+      languageTag.textContent = getCodeLanguage(preElement);
+      preElement.appendChild(languageTag);
+
+      const copyButton = document.createElement("button");
+      copyButton.type = "button";
+      copyButton.className = "copy-code-btn";
+      copyButton.textContent = "copy";
+      copyButton.setAttribute("aria-label", "copy code");
+
+      copyButton.addEventListener("click", async () => {
+        copyButton.classList.remove("is-copying");
+        void copyButton.offsetWidth;
+        copyButton.classList.add("is-copying");
+
+        try {
+          await copyCodeText(codeElement.textContent || "");
+          copyButton.textContent = "√";
+          copyButton.setAttribute("data-copied", "true");
+
+          window.setTimeout(() => {
+            copyButton.textContent = "copy";
+            copyButton.setAttribute("data-copied", "false");
+          }, 1500);
+        } catch {
+          copyButton.textContent = "×";
+          copyButton.setAttribute("data-copied", "false");
+          window.setTimeout(() => {
+            copyButton.textContent = "copy";
+          }, 1500);
+        }
+      });
+
+      preElement.appendChild(copyButton);
+    });
+  }
+
+  initCodeBlocks();
+  document.addEventListener("astro:after-swap", initCodeBlocks);
+</script>
+
+<script is:inline>
   document.addEventListener("astro:page-load", () => {
     if (typeof window.umami !== "undefined") {
       window.umami.track();

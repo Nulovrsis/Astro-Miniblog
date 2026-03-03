@@ -40,18 +40,18 @@
     }
 
     h1 {
-      @apply my-4 text-2xl font-medium dark:text-white tracking-wider;
+      @apply mt-8 mb-4 pl-4 text-3xl font-medium dark:text-white tracking-wider border-l-4 border-blue-500 dark:border-blue-400;
     }
 
     h2 {
-      @apply my-4 text-xl font-medium dark:text-white tracking-wider;
+      @apply mt-8 mb-4 pl-4 text-2xl font-medium dark:text-white tracking-wider border-l-4 border-blue-500 dark:border-blue-400;
     }
 
     h3,
     h4,
     h5,
     h6 {
-      @apply my-4 font-medium dark:text-white text-lg tracking-wider;
+      @apply mt-8 mb-4 pl-4 font-medium dark:text-white text-xl tracking-wider border-l-4 border-blue-500 dark:border-blue-400;
     }
 
     :not(pre)>code {
@@ -59,7 +59,63 @@
     }
 
     pre:has(code) {
-      @apply my-4 max-h-[600px] overflow-auto rounded-lg border p-4 font-mono text-sm font-medium dark:border-zinc-700;
+      @apply relative my-5 max-h-none overflow-visible rounded-xl border border-zinc-200/80 p-4 pt-12 font-mono text-sm font-medium shadow-sm dark:border-zinc-700/80;
+    }
+
+    pre:has(code)::before {
+      content: "";
+      @apply absolute inset-x-0 top-0 h-10 border-b border-zinc-200/80 bg-zinc-100/80 dark:border-zinc-700/80 dark:bg-zinc-800/60;
+    }
+
+    pre:has(code) code {
+      @apply block whitespace-pre-wrap break-words leading-snug;
+      overflow-wrap: anywhere;
+      counter-reset: code-line;
+    }
+
+    pre:has(code) code .line {
+      @apply relative block pl-10 leading-snug;
+      counter-increment: code-line;
+      min-height: auto;
+    }
+
+    pre:has(code) code .line::before {
+      content: counter(code-line);
+      @apply absolute left-0 w-7 select-none text-right text-xs text-zinc-400 dark:text-zinc-500;
+    }
+
+    pre:has(code) .code-lang {
+      @apply absolute left-3 top-2.5 z-10 rounded-md border border-zinc-200 bg-white px-2 py-0.5 font-mono text-xs text-zinc-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300;
+    }
+
+    pre:has(code) .copy-code-btn {
+      @apply absolute right-3 top-2 z-10 rounded-md border border-zinc-200 bg-white px-2 py-1 text-xs text-zinc-600 transition-all duration-200 hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-100;
+    }
+
+    pre:has(code) .copy-code-btn[data-copied="true"] {
+      @apply border-emerald-300 text-emerald-600 dark:border-emerald-700 dark:text-emerald-400;
+    }
+
+    pre:has(code) .copy-code-btn.is-copying {
+      animation: copy-tap 0.2s ease;
+    }
+
+    pre:has(code) .copy-code-btn:active {
+      transform: scale(0.88);
+    }
+
+    @keyframes copy-tap {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(0.92);
+      }
+
+      100% {
+        transform: scale(1);
+      }
     }
 
     img {
@@ -69,7 +125,7 @@
     }
 
     img:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
 
     video {

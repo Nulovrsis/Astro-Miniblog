@@ -8,6 +8,14 @@ function getSavedTheme() {
   return window.localStorage.getItem("theme");
 }
 
+function getCurrentTheme() {
+  if (document.documentElement.classList.contains("dark")) {
+    return "dark";
+  }
+
+  return getSavedTheme() || getSystemTheme();
+}
+
 // 获取系统主题
 function getSystemTheme() {
   return window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -20,15 +28,16 @@ const Comments = () => {
   const [theme, setTheme] = React.useState("light");
 
   React.useEffect(() => {
-    const theme = getSavedTheme() || getSystemTheme();
-    setTheme(theme);
+    setTheme(getCurrentTheme());
+
     // 监听主题变化
     const observer = new MutationObserver(() => {
-      setTheme(getSavedTheme() || getSystemTheme());
+      setTheme(getCurrentTheme());
     });
+
     observer.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ["data-theme"],
+      attributeFilter: ["class"],
     });
 
     // 取消监听
