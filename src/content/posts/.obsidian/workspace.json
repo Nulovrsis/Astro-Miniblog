@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LANraragi：属于屯屯鼠备份与管理Exhentai本子的方案.md",
+                "file": "LANraragi.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "LANraragi：属于屯屯鼠备份与管理Exhentai本子的方案"
+              "title": "LANraragi"
             }
           }
         ],
@@ -93,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "284f4b4bd7411327",
@@ -194,6 +193,8 @@
   },
   "active": "76a6ca32a604d63d",
   "lastOpenFiles": [
+    "LANraragi：屯屯鼠备份与管理Exhentai本子的方案.md",
+    "LANraragi.md",
     "assets/添加档案.png",
     "assets/libvips.png",
     "assets/插件仓库导入.jpg",
@@ -204,9 +205,7 @@
     "assets/code1.png",
     "assets/batch.png",
     "assets/Tag Rules.png",
-    "assets/Plugin.png",
     "().md",
-    "LANraragi：属于屯屯鼠备份与管理Exhentai本子的方案.md",
     "三麻极意.md",
     "LANraragi.mdx",
     "assets/favicon.ico",

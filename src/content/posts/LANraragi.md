@@ -1,5 +1,5 @@
 ---
-title: LANraragi
+title: LANraragi：屯屯鼠备份与管理Exhentai本子的方案
 description: 本文讲述如何部署LANraragi并调教好元数据刮削插件，以及屯屯鼠的本子管理工作流。
 date: 2026-03-02
 ---
@@ -14,7 +14,7 @@ date: 2026-03-02
 
 1. 能够自动化批量完成Tag元数据刮削;
 2. 同时支持Tag检索，回看很方便；
-3. 部署在树莓派<span class="blur-text">(后因SD卡存储有限又懒得另外接固态遂弃用)</span>或者VPS上，通过[Tachiyomi](https://github.com/tachiyomiorg/website)（[Mihon](https://github.com/mihonapp/mihon)/[Komikku](https://github.com/komikku-app/komikku)）等开源漫画阅读软件的LANraragi插件于移动设备上随时随地阅览（PC部署的缺陷）。
+3. 部署在树莓派<span class="blur-text">(后因SD卡存储有限又懒得另外接固态遂弃用)</span>或者VPS上，通过[Tachiyomi](https://github.com/tachiyomiorg/website)（[Mihon](https://github.com/mihonapp/mihon)/[Komikku](https://github.com/komikku-app/komikku)）等开源漫画阅读软件的LANraragi插件于移动设备上随时随地阅览（PC部署在此方面的缺陷）。
 
 虽然部署在服务器和NAS上能够拥有最佳体验，但部署在PC也作为备份管理也未尝不可，想了解更多通过下方Repo的链接卡片访问：
 
@@ -96,7 +96,7 @@ function lanraragi {
 ![batch](assets/batch.png)
 
 - PS:如果出现SSL报错或者各种网络问题也可以尝试修改此插件的源码,插件路径在`~\lanraragi\lib\LANraragi\Plugin\Metadata\EHentai.pm`,在里面添加针对`ua`代理的临时环境变量,其中的端口修改为自己的代理软件端口,我主要修改了一下两个部分，可以自行修改，也可以参考[我的仓库](https://github.com/Nulovrsis/LANraragi-Plugins-Tag-Rules)中的`.pm`文件,修改好自己的代理地址即可直接替换原版`.pm`插件使用。
-![code2](assets/code2.png)
+  ![code2](assets/code2.png)
 
 ![code1](assets/code1.png)
 
@@ -142,7 +142,7 @@ Nhentai（应对版权炮/同时便于对画师其他作品查漏补缺）
 通过阅读[v0.9.60 的ChangeLog](https://github.com/Difegue/LANraragi/releases/tag/v.0.9.60)可以发现，此次更新提供了新的缩略图生成与显示方案，之前使用的是`Image Magick`，现在可以下载[libvips](https://www.libvips.org/)，并在系统中添加环境变量，LRR即可使用该工具生成缩略图。
 
 > 注意检查是否曾经下载过libvips，不然可能会有冲突，例如我之前使用`scoop`下载过，并且`scoop`自动将其添加至环境变量,导致我新手动下载的`libvips`没有被LRR正确识别调用。
-![libvips](assets/libvips.png)
+> ![libvips](assets/libvips.png)
 
 ## 如何使用Mihon/Komikku中的LANraragi插件
 
