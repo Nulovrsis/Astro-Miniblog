@@ -26,12 +26,15 @@ date: 2026-03-02
 安装后通过快捷方式打开即可在托盘看见后台服务:
 ![LRR](assets/LRR.png)
 ![系统托盘](assets/系统托盘.png)
+
 在`Settings`中设置好漫画存储路径和缩略图存储路径后(注意端口默认3000,检查是否被占用),通过`Open Client`查看网页即`http://localhost:3000`,`Log Console`可以查看日志。
 ![Settings](assets/Settings.png)
 
 后续只要在所设置的`/content`目录存放漫画便可以在网页上看到啦。<span class="blur-text">展示一下王之宝库</span>
 ![LRR%20MainPage](assets/LRR%20MainPage.jpg)
 
+也可以在`添加档案`里手动上传:
+![](assets/添加档案.png)
 还有标签云功能也比较有意思：
 ![标签云](assets/标签云.jpg)
 
