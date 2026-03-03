@@ -1,6 +1,6 @@
 ---
 title: LANraragi
-description: 本文讲述如何部署LANraragi并调教好元数据刮削插件，以及作为屯屯鼠的本子管理工作流。
+description: 本文讲述如何部署LANraragi并调教好元数据刮削插件，以及屯屯鼠的本子管理工作流。
 date: 2026-03-02
 ---
 
