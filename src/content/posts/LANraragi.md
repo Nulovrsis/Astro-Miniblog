@@ -127,7 +127,7 @@ Nhentai（应对版权炮/同时便于对画师其他作品查漏补缺）
 
 ### 命名统一（可选）
 
-如果你和我一样有点强迫症，会发现Ehviewer 中开启的ComicInfo功能 生成的`.xml`文件中没有Title这一项:使用的是`<Series>`和`<AlternateSeries>`前者一般是罗马，后者是日语假名。
+如果你和我一样有点强迫症，会发现`Ehviewer` 中开启的ComicInfo功能 生成的`.xml`文件中没有Title这一项:使用的是`<Series>`和`<AlternateSeries>`前者一般是罗马，后者是日语假名。
 因此导致在使用lanraragi的ComicInfo元数据插件时尽管开启了"允许插件修改档案标题"，依旧没有修改档案标题。所以处于修改的方便考虑（没有考虑维护，虽然平时lanraragi更新不会动刀pm插件部分），我修改了`ComicInfo.pm` 中传输`$title`的逻辑（全部使用假名作为标题）:
 
 ```perl
@@ -153,7 +153,7 @@ Nhentai（应对版权炮/同时便于对画师其他作品查漏补缺）
     }
 ```
 
-> 因为平时几乎是在Exhentai下的资源均含有ComicInfo.xml文件，如果是补档资源(nhentai)，导入的过程中会因为没有`tag`而被容易被`batch option`识别，此时在`batch option`中使用Ehenatai插件批量刮削tag即可
+> 因为平时几乎是在Exhentai下的资源均含有ComicInfo.xml文件，如果是补档资源(nhentai)，导入的过程中会因为没有`tag`而被容易被`batch option`识别，此时在`batch option`中使用`E-hentai`/`nHentai`插件批量刮削tag即可
 
 ### 更快的缩略图生成（可选）
 
