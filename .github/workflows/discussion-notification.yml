@@ -23,7 +23,8 @@ jobs:
 
           # --- 邮件内容 ---
           subject: "您的博客 [${{ github.event.repository.name }}] 有新动态"
-          from: "Blog Notifier <${{ secrets.MAIL_USERNAME }}>"
+          to: ${{ secrets.MAIL_TO }}
+          from: "Blog Notifier <${{ secrets.MAIL_FROM }}>"
 
           convert_markdown: true
 
