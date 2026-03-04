@@ -42,8 +42,7 @@ jobs:
             🔗 [点击跳转到讨论页面](${{ github.event.comment.html_url || github.event.discussion.html_url }})
             ---
             🤖 此邮件由 GitHub Actions 自动发送
-          # --- 日志调试 (如果发送失败可改为 true) ---
-          nodemailerlog: false
+          # --- 日志调试参数先移除，避免 logger 兼容问题 ---
 
       # - name: ntfy-notifications
       #   uses: niniyas/ntfy-action@master
