@@ -1,0 +1,59 @@
+name: Discussion Notification
+
+on:
+  discussion_comment:
+    types: [created]
+  discussion:
+    types: [created]
+
+jobs:
+  send-notification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send mail
+        uses: dawidd6/action-send-mail@v11
+        with:
+          # --- 连接配置 ---
+          server_address: ${{secrets.MAIL_SERVER}}
+          server_port: ${{secrets.MAIL_PORT}}
+
+          secure: true
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+
+          # --- 邮件内容 ---
+          subject: "您的博客 [${{ github.event.repository.name }}] 有新动态"
+          from: "Blog Notifier <${{ secrets.MAIL_USERNAME }}>"
+
+          convert_markdown: true
+
+          priority: high
+
+          body: |
+            ## 📝 收到新的留言
+
+            **来自用户**: `${{ github.event.comment.user.login || github.event.discussion.user.login }}`
+
+            **留言内容**:
+            > ${{ github.event.comment.body || github.event.discussion.body }}
+
+            ---
+            🔗 [点击跳转到讨论页面](${{ github.event.comment.html_url || github.event.discussion.html_url }})
+            ---
+            🤖 此邮件由 GitHub Actions 自动发送
+          # --- 日志调试 (如果发送失败可改为 true) ---
+          nodemailerlog: false
+
+      # - name: ntfy-notifications
+      #   uses: niniyas/ntfy-action@master
+      #   with:
+      #     title: "${{ github.event.comment.user.login || github.event.discussion.user.login }} 给您的博客评论啦"
+      #     url: ${{ secrets.NTFY_URL }}
+      #     topic: ${{ secrets.NTFY_TOPIC }}
+      #     priority: 5
+      #     headers: '{"authorization": "Bearer ${{ secrets.NTFY_TOKEN }}"}'
+      #     tags: tada
+      #     details: |
+      #       评论人: ${{ github.event.comment.user.login || github.event.discussion.user.login }}
+      #       内容: ${{ github.event.comment.body || github.event.discussion.body }}
+      #       链接: ${{ github.event.comment.html_url || github.event.discussion.html_url }}
